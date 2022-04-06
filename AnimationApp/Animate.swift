@@ -28,9 +28,9 @@ struct Animate {
         Animate(
             preset: DataManager.shared.animations.randomElement()?.rawValue ?? "",
             curve: DataManager.shared.curves.randomElement()?.rawValue ?? "",
-            force: Double.random(in: 0...1.3),
+            force: Double.random(in: 1...1.5),
             duration: Double.random(in: 1...2),
-            delay: Double.random(in: 0...0.5)
+            delay: 0.4
         )
     }
 }

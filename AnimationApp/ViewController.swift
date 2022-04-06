@@ -8,14 +8,16 @@
 import Spring
 
 class ViewController: UIViewController {
+    
     // MARK: - IB Outlets
     @IBOutlet weak var animationView: SpringView!
     @IBOutlet weak var animationInfo: UILabel!
+    
     // MARK: - Private properties
     private var animation = Animate.randomAnimation()
+    
     // MARK: IBActions
     @IBAction func buttonPressed(_ sender: SpringButton) {
-        animation = Animate.randomAnimation()
         animationInfo.text = animation.fullinfo
         animationView.animation = animation.preset
         animationView.curve = animation.curve
@@ -24,6 +26,7 @@ class ViewController: UIViewController {
         animationView.delay = animation.delay
         animationView.animate()
 
+        animation = Animate.randomAnimation()
         sender.setTitle("Run \(animation.preset)", for: .normal)
     }
 }
