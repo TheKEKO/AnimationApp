@@ -8,6 +8,7 @@
 import Spring
 
 class DataManager {
+    
     static let shared = DataManager()
     
     let animations = Spring.AnimationPreset.allCases

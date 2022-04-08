@@ -18,19 +18,19 @@ struct Animate {
     """
     Preset: \(preset)
     Curve: \(curve)
-    Force: \(String(format: "%.1f", force))
-    Duration: \(String(format: "%.1f", duration))
-    Delay: \(String(format: "%.1f", delay))
+    Force: \(String(format: "%.02f", force))
+    Duration: \(String(format: "%.02f", duration))
+    Delay: \(String(format: "%.02f", delay))
     """
     }
     
     static func randomAnimation() -> Animate {
         Animate(
-            preset: DataManager.shared.animations.randomElement()?.rawValue ?? "",
-            curve: DataManager.shared.curves.randomElement()?.rawValue ?? "",
+            preset: DataManager.shared.animations.randomElement()?.rawValue ?? "slideLeft",
+            curve: DataManager.shared.curves.randomElement()?.rawValue ?? "easeIn",
             force: Double.random(in: 1...1.5),
-            duration: Double.random(in: 1...2),
-            delay: 0.4
+            duration: Double.random(in: 0.8...1.6),
+            delay: 0.3
         )
     }
 }

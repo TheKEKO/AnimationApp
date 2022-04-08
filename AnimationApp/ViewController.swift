@@ -11,7 +11,11 @@ class ViewController: UIViewController {
     
     // MARK: - IB Outlets
     @IBOutlet weak var animationView: SpringView!
-    @IBOutlet weak var animationInfo: UILabel!
+    @IBOutlet weak var animationInfo: UILabel! {
+        didSet {
+            animationInfo.text = animation.fullinfo
+        }
+    }
     
     // MARK: - Private properties
     private var animation = Animate.randomAnimation()
@@ -25,7 +29,7 @@ class ViewController: UIViewController {
         animationView.duration = animation.duration
         animationView.delay = animation.delay
         animationView.animate()
-
+        
         animation = Animate.randomAnimation()
         sender.setTitle("Run \(animation.preset)", for: .normal)
     }
