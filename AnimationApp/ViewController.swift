@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     // MARK: IBActions
     @IBAction func buttonPressed(_ sender: SpringButton) {
         animationInfo.text = animation.fullinfo
+        
         animationView.animation = animation.preset
         animationView.curve = animation.curve
         animationView.force = animation.force
