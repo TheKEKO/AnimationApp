@@ -8,6 +8,7 @@
 import Foundation
 
 struct Animate {
+    
     let preset: String
     let curve: String
     let force: Double
